@@ -1,6 +1,7 @@
 plugins {
 	id 'net.minecraftforge.gradle.patcher' version '[5.1.50,5.2.0)'
 	id 'net.minecraftforge.gradle.mcp' version '[5.1.50,5.2.0)' apply false
+	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
 apply plugin: 'net.minecraftforge.gradle.patcher'
