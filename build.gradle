@@ -1,0 +1,16 @@
+plugins {
+	id 'net.minecraftforge.gradle.patcher' version '[5.1.50,5.2.0)'
+	id 'net.minecraftforge.gradle.mcp' version '[5.1.50,5.2.0)' apply false
+}
+
+apply plugin: 'net.minecraftforge.gradle.patcher'
+
+patcher {
+	parent = project ':mcp'
+	mcVersion = project.minecraft_version
+	patchedSrc = file 'src/main/java'
+	mappings channel: project.mappings_channel, version: project.mappings_version
+}
+
+// this is stupid!
+project(':mcp') { apply plugin: 'net.minecraftforge.gradle.mcp' }

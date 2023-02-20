@@ -1,0 +1,4 @@
+mcp {
+	config = "${rootProject.minecraft_version}-${rootProject.mcp_version}"
+	pipeline = 'joined'
+}
