@@ -5,3 +5,7 @@
 **/.classpath
 **/.project
 **/.gradle/
+run/
+src/main/java/com/mojang/
+src/main/java/net/minecraft/
+src/main/java/mcp/

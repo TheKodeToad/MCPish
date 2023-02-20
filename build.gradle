@@ -5,11 +5,36 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle.patcher'
 
+dependencies {
+	implementation 'net.minecraftforge:forgespi:6.0.0'
+}
+
 patcher {
 	parent = project ':mcp'
 	mcVersion = project.minecraft_version
 	patchedSrc = file 'src/main/java'
 	mappings channel: project.mappings_channel, version: project.mappings_version
+
+	runs {
+		client {
+			client true
+			taskName 'runClient'
+			main 'net.minecraft.client.main.Main'
+			workingDirectory file('run')
+
+			args '--version', project.minecraft_version
+			args '--assetsDir', downloadAssets.output
+			args '--assetIndex', '{asset_index}'
+			args '--accessToken', '0'
+		}
+
+		server {
+			client false
+			taskName 'runServer'
+			main 'net.minecraft.server.Main'
+			workingDirectory file('run')
+		}
+	}
 }
 
 // this is stupid!
