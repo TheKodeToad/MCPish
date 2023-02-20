@@ -4,7 +4,7 @@ A boilerplate for using Forge's existing tools to decompile Minecraft! Alternati
 This is an outdated less-compatible method of Minecraft modding but it's useful for making quick changes! If you want to create something serious, using a Fabric or Quilt (still in beta) mod with mixins is a better idea.
 
 ## How
-Run the gradle task `extractMapped`. Warning: this will override everything!
+Run the gradle tasks `setup extractMapped`. Warning: this will override everything!
 
 ## Why, toad
 MCP Reborn didn't want to change their license :(. I still like modifying Minecraft's source code directly to do very stuipd things to it!
